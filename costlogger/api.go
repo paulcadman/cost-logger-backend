@@ -1,24 +1,26 @@
 package costlogger
 
 import (
+	"net/http"
+
 	"github.com/GoogleCloudPlatform/go-endpoints/endpoints"
 )
 
 const clientId = "78836484100-c7tmmk03qn4ujpk2b4ea434p4oqtomto.apps.googleusercontent.com"
 
 var (
-	scopes    = []string{endpoints.EmailScope}
+	scopes	  = []string{endpoints.EmailScope}
 	clientIds = []string{clientId, endpoints.APIExplorerClientID}
 	// in case we'll want to use TicTacToe API from an Android app
 	audiences = []string{clientId}
 )
 
 type CostListReq struct {
-    Limit int `json:"limit"`
+	Limit int `json:"limit"`
 }
 
 type CostListResp struct {
-    Items []string `json:"items"`
+	Items []string `json:"items"`
 }
 
 // CostLogger API service
